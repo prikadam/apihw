@@ -25,32 +25,14 @@
         request.send();
       }
 
-      async function getAffirmation2() {
-        fetch("https://quotes.rest/qod.json?category=inspire", {
-          method: "GET",
-          mode: "cors",
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-            document.getElementById("affirmation2").innerHTML =
-              data.contents.quotes[0].quote;
-          })
-          .catch((error) => {
-            console.error("Error", error);
-          });
-      }
-
       function getAffirmations() {
         getAffirmation1();
-        getAffirmation2();
       }
     </script>
   </head>
   <body onload="getAffirmations()" style="text-align: center">
     Some affirmations to start your day:
     <div id="affirmation1"></div>
-    <div id="affirmation2"></div>
 
     <div>
       <ul style="list-style-type: none">
